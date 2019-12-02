@@ -3,7 +3,7 @@
 
  Fork from [PytorchToCaffe](https://github.com/xxradon/PytorchToCaffe)
 
- modify some code to support Permute and contiguous(Permute->Permute || contiguous->flatten)
+ modify some code to support Permute and contiguous(Permute->Permute || contiguous->flatten||CRelu‘s neg-> power)
 
  Providing a tool for  neural network frameworks for pytorch and caffe.
 
@@ -101,6 +101,10 @@ The supported layers concluded the most popular layers and operations.
 
 Example: please see file `example/alexnet_pytorch_to_caffe.py`. Just Run `python3 example/alexnet_pytorch_to_caffe.py`
 
+# Pytorch visulization
+
+* Add pytorch network visualization under VisPytorchNet folder.
+
 # Deploy verify
 After Converter,we should use verify_deploy.py to verify the output of pytorch model and the convertted caffe model.
 If you want to verify the outputs of caffe and pytorch,you should make caffe and pytorch install in the same environment,anaconda is recommended.
@@ -112,6 +116,8 @@ conda install caffe-gpu pytorch cudatoolkit=9.0 -c pytorch
 ```
 
 please see file `example/verify_deploy.py`,it can verify the output of pytorch model and the convertted caffe model in the same input.
+
+
 
 
 # Some common functions
